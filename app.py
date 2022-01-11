@@ -19,7 +19,7 @@ def app():
     class_btn = st.button("Extract")
 
     if file_uploaded is not None:
-        with open(os.path.join("/Users/micky/ever/form/form_test",file_uploaded.name),"wb") as f:
+        with open(os.path.join("form_test",file_uploaded.name),"wb") as f:
             f.write((file_uploaded).getbuffer())
 
         file_path=f'/Users/micky/ever/form/form_test/{file_uploaded.name}'
