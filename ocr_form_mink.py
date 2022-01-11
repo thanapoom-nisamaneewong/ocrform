@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 from pdf2image import convert_from_path
 import json
 
-pytesseract.pytesseract.tesseract_cmd = r'/app/.apt/usr/bin/tesseract'
+#pytesseract.pytesseract.tesseract_cmd = r'/app/.apt/usr/bin/tesseract'
 
 def cleanData(x):
     x = x.replace('\n', '')
