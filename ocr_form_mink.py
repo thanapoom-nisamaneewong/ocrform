@@ -278,7 +278,8 @@ def getMain(filepath):
     bf=cv2.BFMatcher(cv2.NORM_HAMMING)
     print(type(bf))
     matches_1 = bf.match(des1_i,des1)
-    print(matches_1)
+    print(type(matches_1))
+    matches_1=list(matches_1)
     print(type(matches_1))
     matches_1.sort(key=lambda x: x.distance)
     good_1 = matches_1[:int(len(matches_1) * (per / 100))]
