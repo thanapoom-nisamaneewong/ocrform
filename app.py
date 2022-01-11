@@ -22,7 +22,7 @@ def app():
         with open(os.path.join("form_test",file_uploaded.name),"wb") as f:
             f.write((file_uploaded).getbuffer())
 
-        file_path=f'/Users/micky/ever/form/form_test/{file_uploaded.name}'
+        file_path=f'form_test/{file_uploaded.name}'
         #st.write(file_path)
 
     if class_btn:
