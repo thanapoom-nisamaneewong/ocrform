@@ -250,6 +250,9 @@ def getMain(filepath):
     imgQ1 = cv2.imread('template/page1.png')
     imgQ2 = cv2.imread('template/page2.png')
     imgQ3 = cv2.imread('template/page3.png')
+    print(type(imgQ1))
+    print(type(imgQ2))
+    print(type(imgQ3))
 
     #input
     imgI1 = cv2.imread('form_test/page1.png')
@@ -267,6 +270,7 @@ def getMain(filepath):
     kp1_i, des1_i = orb.detectAndCompute(imgI1, None)
     bf=cv2.BFMatcher(cv2.NORM_HAMMING)
     matches_1 = bf.match(des1_i,des1)
+    print(type(matches_1))
     matches_1.sort(key=lambda x: x.distance)
     good_1 = matches_1[:int(len(matches_1) * (per / 100))]
     imgMatch = cv2.drawMatches(imgI1, kp1_i, imgQ1, kp1, good_1, None, flags=2)
