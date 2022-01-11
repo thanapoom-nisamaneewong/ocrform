@@ -36,17 +36,17 @@ def readText(x, lang):
     TH_EN_config = ('-l tha+eng -c preserve_interword_spaces=1 --oem 1 --psm 6')
 
     if lang == 'eng':
-        x = pytesseract.image_to_string(x, lang='DilleniaUPC_eng', config=EN_config)
-        #x = pytesseract.image_to_string(x, lang='eng', config=EN_config)
+        #x = pytesseract.image_to_string(x, lang='DilleniaUPC_eng', config=EN_config)
+        x = pytesseract.image_to_string(x, lang='eng', config=EN_config)
 
     if lang == 'tha':
-        x = pytesseract.image_to_string(x, lang='DilleniaUPC_tha', config=TH_config)
-        #x = pytesseract.image_to_string(x, lang='tha', config=TH_config)
+        #x = pytesseract.image_to_string(x, lang='DilleniaUPC_tha', config=TH_config)
+        x = pytesseract.image_to_string(x, lang='tha', config=TH_config)
 
     if lang == '':
         x = pytesseract.image_to_string(x)
     if lang == 'num':
-        x = pytesseract.image_to_string(x, lang='DilleniaUPC_eng', config=Num_config)
+        x = pytesseract.image_to_string(x, lang='eng', config=Num_config)
     if lang == 'tha+eng':
         x = pytesseract.image_to_string(x, lang=lang, config=TH_EN_config)
 
@@ -57,7 +57,7 @@ def readText(x, lang):
 def readText_num(x):
 
     Num_config = ('--psm 13 --oem 3 -c tessedit_char_whitelist=0123456789.,-')
-    x = pytesseract.image_to_string(x, lang='DilleniaUPC_eng', config=Num_config)
+    x = pytesseract.image_to_string(x, lang='eng', config=Num_config)
     x = cleanData_num(x)
     return x
 
