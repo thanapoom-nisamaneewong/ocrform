@@ -258,6 +258,9 @@ def getMain(filepath):
     imgI1 = cv2.imread('form_test/page1.png')
     imgI2 = cv2.imread('form_test/page2.png')
     imgI3 = cv2.imread('form_test/page3.png')
+    print(type(imgI1))
+    print(type(imgI2))
+    print(type(imgI3))
 
     # Dictionary for getting results
     dictResult = dict()
@@ -267,7 +270,9 @@ def getMain(filepath):
     h, w, c = imgQ1.shape
     orb = cv2.ORB_create(5000)
     kp1, des1 = orb.detectAndCompute(imgQ1, None)
+    print(type(des1))
     kp1_i, des1_i = orb.detectAndCompute(imgI1, None)
+    print(type(des1_i))
     bf=cv2.BFMatcher(cv2.NORM_HAMMING)
     matches_1 = bf.match(des1_i,des1)
     print(type(matches_1))
